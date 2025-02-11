@@ -59,33 +59,35 @@ CREATE TABLE bookings (
 ```
 
 ## API Endpoints
-```Authentication
-POST /api/auth/register - Register a new user
-POST /api/auth/login - Login user
-```
 
-```Trains
-POST /api/trains - Add new train (Admin only)
-GET /api/trains/availability - Get seat availability
-```
+- Authentication
 
-```Bookings
-POST /api/bookings - Book a seat
-GET /api/bookings/:id - Get booking details
-```
+    - POST /api/auth/register - Register a new user
+    - POST /api/auth/login - Login user
+
+- Trains
+
+    - POST /api/trains - Add new train (Admin only)
+    - GET /api/trains/availability - Get seat availability
+
+- Bookings
+
+    - POST /api/bookings - Book a seat
+    - GET /api/bookings/:id - Get booking details
+
 
 ## Security Features
-JWT authentication
-Admin API key protection
-Rate limiting
-CORS enabled
-Helmet security headers
-Password hashing
-Race condition handling in bookings
+- JWT authentication
+- Admin API key protection
+- Rate limiting
+- CORS enabled
+- Helmet security headers
+- Password hashing
+- Race condition handling in bookings
 
 ## Error Handling
-The API includes comprehensive error handling for:
-Invalid requests
-Authentication errors
-Database errors
-Concurrent booking conflicts
+- The API includes comprehensive error handling for:
+    - Invalid requests
+    - Authentication errors
+    - Database errors
+    - Concurrent booking conflicts
