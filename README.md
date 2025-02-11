@@ -1,6 +1,6 @@
 # Railway Management System API
-A RESTful API for a railway management system built with Node.js, Express, and PostgreSQL.
 
+A RESTful API for a railway management system built with Node.js, Express, and PostgreSQL.
 
 ## Features
 
@@ -10,13 +10,13 @@ A RESTful API for a railway management system built with Node.js, Express, and P
 - Secure booking system with race condition handling
 - Booking details retrieval
 
-
 ## Prerequisites
-- Node.js (v14 or higher)
-- PostgreSQL database (Neon DB)
 
+- Node.js (v14 or higher)
+- PostgreSQL database (e.g., Neon DB)
 
 ## Environment Variables
+
 Create a `.env` file in the root directory with the following variables:
 
 ```env
@@ -24,11 +24,8 @@ DATABASE_URL=your_neon_db_connection_string
 JWT_SECRET=your_jwt_secret
 ADMIN_API_KEY=your_admin_api_key
 PORT=3000
-```
 
-## Database Schema
-
-```sql
+````Schema
 -- Users table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -58,52 +55,29 @@ CREATE TABLE bookings (
     booking_date TIMESTAMP NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-```
 
-## Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set up environment variables
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
-
-## API Endpoints
-
-### Authentication
-
-- POST `/api/auth/register` - Register a new user
-- POST `/api/auth/login` - Login user
-
-### Trains
-
-- POST `/api/trains` - Add new train (Admin only)
-- GET `/api/trains/availability` - Get seat availability
-
-### Bookings
-
-- POST `/api/bookings` - Book a seat
-- GET `/api/bookings/:id` - Get booking details
-
-## Security Features
-
-- JWT authentication
-- Admin API key protection
-- Rate limiting
-- CORS enabled
-- Helmet security headers
-- Password hashing
-- Race condition handling in bookings
-
-## Error Handling
-
+API Endpoints
+Authentication
+POST /api/auth/register - Register a new user
+POST /api/auth/login - Login user
+Trains
+POST /api/trains - Add new train (Admin only)
+GET /api/trains/availability - Get seat availability
+Bookings
+POST /api/bookings - Book a seat
+GET /api/bookings/:id - Get booking details
+Security Features
+JWT authentication
+Admin API key protection
+Rate limiting
+CORS enabled
+Helmet security headers
+Password hashing
+Race condition handling in bookings
+Error Handling
 The API includes comprehensive error handling for:
-- Invalid requests
-- Authentication errors
-- Database errors
-- Concurrent booking conflicts
+
+Invalid requests
+Authentication errors
+Database errors
+Concurrent booking conflicts
