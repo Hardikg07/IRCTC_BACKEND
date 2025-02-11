@@ -24,9 +24,9 @@ DATABASE_URL=your_neon_db_connection_string
 JWT_SECRET=your_jwt_secret
 ADMIN_API_KEY=your_admin_api_key
 PORT=3000
-````
+```
 
-````schema
+```schema
 -- Users table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -56,19 +56,25 @@ CREATE TABLE bookings (
     booking_date TIMESTAMP NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-````
+```
 
-API Endpoints
-Authentication
+## API Endpoints
+```Authentication
 POST /api/auth/register - Register a new user
 POST /api/auth/login - Login user
-Trains
+```
+
+```Trains
 POST /api/trains - Add new train (Admin only)
 GET /api/trains/availability - Get seat availability
-Bookings
+```
+
+```Bookings
 POST /api/bookings - Book a seat
 GET /api/bookings/:id - Get booking details
-Security Features
+```
+
+## Security Features
 JWT authentication
 Admin API key protection
 Rate limiting
@@ -76,9 +82,9 @@ CORS enabled
 Helmet security headers
 Password hashing
 Race condition handling in bookings
-Error Handling
-The API includes comprehensive error handling for:
 
+## Error Handling
+The API includes comprehensive error handling for:
 Invalid requests
 Authentication errors
 Database errors
