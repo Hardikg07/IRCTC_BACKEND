@@ -24,8 +24,9 @@ DATABASE_URL=your_neon_db_connection_string
 JWT_SECRET=your_jwt_secret
 ADMIN_API_KEY=your_admin_api_key
 PORT=3000
+````
 
-````Schema
+````schema
 -- Users table
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -55,6 +56,7 @@ CREATE TABLE bookings (
     booking_date TIMESTAMP NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+````
 
 API Endpoints
 Authentication
